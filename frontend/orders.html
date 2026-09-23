@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script type="module" src="vendor/ionicons/ionicons.esm.js"></script>
+
+    <title>My Orders — Splendid Studio</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="orders-page">
+
+        <section class="orders-hero">
+            <span class="section-label">MY ORDERS</span>
+
+            <h1>Your Orders</h1>
+
+            <p>
+                Track your design, printing and delivery orders
+                from one place.
+            </p>
+            <a href="order.html" class="create-order-btn">
+                <ion-icon name="add-outline"></ion-icon>
+                <span>Create New Order</span>
+            </a>
+        </section>
+
+        <section class="orders-section">
+
+            <div class="orders-filters">
+                <button class="order-filter active" type="button">
+                    All
+                </button>
+
+                <button class="order-filter" type="button">
+                    Pending
+                </button>
+
+                <button class="order-filter" type="button">
+                    In Progress
+                </button>
+
+                <button class="order-filter" type="button">
+                    Ready
+                </button>
+
+                <button class="order-filter" type="button">
+                    Completed
+                </button>
+            </div>
+
+            <div class="orders-list">
+
+            </div>
+
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Customer Tab Navigation -->
+    <nav class="mobile-tab-bar" aria-label="Customer navigation">
+
+        <a href="dashboard.html" class="mobile-tab">
+            <ion-icon name="home-outline"></ion-icon>
+            <span>Home</span>
+        </a>
+
+        <a href="services.html" class="mobile-tab">
+            <ion-icon name="grid-outline"></ion-icon>
+            <span>Services</span>
+        </a>
+
+        <a href="orders.html" class="mobile-tab active">
+            <ion-icon name="receipt-outline"></ion-icon>
+            <span>Orders</span>
+        </a>
+
+        <a href="account.html" class="mobile-tab">
+            <ion-icon name="person-outline"></ion-icon>
+            <span>Account</span>
+        </a>
+
+        <a href="more.html" class="mobile-tab">
+            <ion-icon name="ellipsis-horizontal"></ion-icon>
+            <span>More</span>
+        </a>
+
+    </nav>
+
+    <script src="orders.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

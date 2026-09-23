@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account | Splendid Studio</title>
+    <meta name="description" content="Create your Splendid Studio customer account.">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="auth-page">
+
+    <main class="auth-container">
+
+        <a href="index.html" class="auth-logo">
+            <span class="logo-mark">S</span>
+            <span>Splendid<span>Studio</span></span>
+        </a>
+
+        <section class="auth-card">
+
+            <div class="auth-header">
+                <span class="auth-badge">✦ CUSTOMER ACCOUNT</span>
+
+                <h1>Create your account</h1>
+
+                <p>
+                    Create an account to place orders, track your designs
+                    and manage your Splendid Studio projects.
+                </p>
+            </div>
+
+            <form id="signupForm">
+
+                <div class="form-group">
+                    <label for="fullName">Full name</label>
+                    <input
+                        type="text"
+                        id="fullName"
+                        name="fullName"
+                        placeholder="Enter your full name"
+                        autocomplete="name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="you@example.com"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone number</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="08012345678"
+                        autocomplete="tel"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+
+                    <div class="password-wrapper">
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Create a strong password"
+                            autocomplete="new-password"
+                            minlength="8"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="passwordToggle"
+                            aria-label="Show password"
+                        >
+                            Show
+                        </button>
+                    </div>
+
+                    <small>Password must be at least 8 characters.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm password</label>
+
+                    <div class="password-wrapper">
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            placeholder="Repeat your password"
+                            autocomplete="new-password"
+                            minlength="8"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <label class="terms-check">
+                    <input type="checkbox" id="terms" required>
+
+                    <span>
+                        I agree to the Splendid Studio terms and
+                        understand that submitted order information
+                        may be used to process my order.
+                    </span>
+                </label>
+
+                <button type="submit" class="auth-submit">
+                    Create Account
+                    <span>→</span>
+                </button>
+
+                <p class="auth-switch">
+                    Already have an account?
+                    <a href="login.html">Log in</a>
+                </p>
+
+            </form>
+
+        </section>
+
+        <p class="auth-footer">
+            © 2026 Splendid Studio · Design • Print • Deliver
+        </p>
+
+    </main>
+
+<script src="signup.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

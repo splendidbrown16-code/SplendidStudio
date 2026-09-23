@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Start an Order — Splendid Studio</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script type="module" src="vendor/ionicons/ionicons.esm.js"></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="dashboard.html" class="logo">
+            <span class="logo-mark">S</span>
+            <span class="logo-text">
+                Splendid<span>Studio</span>
+            </span>
+        </a>
+
+        <a href="dashboard.html" class="header-btn">
+            Back to Dashboard
+        </a>
+    </header>
+
+
+    <main class="order-page">
+
+        <section class="order-hero">
+
+            <span class="section-kicker">
+                SPLENDID STUDIO
+            </span>
+
+            <h1>
+                Start an <span>Order</span>
+            </h1>
+
+            <p>
+                Tell us what you need and we'll take care of the rest.
+            </p>
+
+        </section>
+
+
+        <section class="order-form-section">
+
+            <div class="order-form-header">
+                <div>
+                    <span class="form-step">STEP 01</span>
+                    <h2>What would you like us to create?</h2>
+                </div>
+            </div>
+
+
+            <form id="orderForm">
+
+                
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="custom-request-options" class="dynamic-order-options" hidden>
+
+    <div class="dynamic-options-header">
+        <span>HELP ME WITH MY REQUEST</span>
+        <p>Don't worry if you don't know the exact service. Tell us what you need and we'll guide you.</p>
+    </div>
+
+    <div class="form-group">
+        <label for="custom-request-title">What do you need?</label>
+
+        <input
+            type="text"
+            id="custom-request-title"
+            placeholder="e.g. I need a design for my business"
+        >
+    </div>
+
+    <div class="form-group">
+        <label for="custom-request-description">Describe What You Need</label>
+
+        <textarea
+            id="custom-request-description"
+            rows="6"
+            placeholder="Tell us what you want, what it will be used for, quantity, colours, text, or any other details. If you're unsure about specifications, the designer will help you."
+        ></textarea>
+    </div>
+
+    <div class="dynamic-help-note">
+        <ion-icon name="chatbubbles-outline"></ion-icon>
+
+        <div>
+            <strong>Need guidance?</strong>
+            <p>
+                That's completely fine. The designer will review your request and help you choose the right service and specifications.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<div id="graphic-design-options" class="dynamic-order-options" hidden>
+
+    <div class="dynamic-options-header">
+        <span>GRAPHIC DESIGN DETAILS</span>
+        <p>Tell us what you want designed and the details you have in mind.</p>
+    </div>
+
+    <div class="form-group">
+        <label for="graphic-design-type">Design Type</label>
+
+        <select id="graphic-design-type">
+            <option value="">Choose a design type</option>
+            <option value="poster">Poster</option>
+            <option value="advert">Advertisement</option>
+            <option value="event">Event Design</option>
+            <option value="promotional">Promotional Graphic</option>
+            <option value="business">Business Design</option>
+            <option value="personal">Personal Design</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="graphic-design-quantity">Quantity</label>
+
+        <input
+            type="number"
+            id="graphic-design-quantity"
+            min="1"
+            value="1"
+            placeholder="Enter quantity"
+        >
+    </div>
+
+    <div class="form-group">
+        <label for="graphic-design-description">Design Description</label>
+
+        <textarea
+            id="graphic-design-description"
+            rows="5"
+            placeholder="Describe what you want designed, the text to include, preferred colours, images or any other important details."
+        ></textarea>
+    </div>
+
+</div>
+
+<div id="church-material-options" class="dynamic-order-options" hidden>
+
+    <div class="dynamic-options-header">
+        <span>CHURCH MATERIALS DETAILS</span>
+        <p>Tell us what church material you need and the details for the design.</p>
+    </div>
+
+    <div class="form-group">
+        <label for="church-material-type">Material Type</label>
+
+        <select id="church-material-type">
+            <option value="">Choose a material</option>
+            <option value="church-flyer">Church Flyer / Handbill</option>
+            <option value="church-poster">Church Poster</option>
+            <option value="church-programme">Church Programme</option>
+            <option value="church-banner">Church Banner / Flex</option>
+            <option value="invitation">Church Invitation</option>
+            <option value="event-design">Church Event Design</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="church-event">Event / Programme Name</label>
+
+        <input
+            type="text"
+            id="church-event"
+            placeholder="e.g. Annual Convention, Youth Programme"
+        >
+    </div>
+
+    <div class="form-group">
+        <label for="church-quantity">Quantity</label>
+
+        <input
+            type="number"
+            id="church-quantity"
+            min="1"
+            value="1"
+            placeholder="Enter quantity"
+        >
+    </div>
+
+    <div class="form-group">
+        <label for="church-description">Additional Details</label>
+
+        <textarea
+            id="church-description"
+            rows="5"
+            placeholder="Tell us any important details, theme, colours, Bible verse, contact information or other text you want included."
+        ></textarea>
+    </div>
+
+</div>
+
+<div id="brochure-options" class="dynamic-order-options" hidden>
+
+    <div class="dynamic-options-header">
+        <span>BROCHURE DETAILS</span>
+        <p>Tell us the brochure layout, quantity and printing style.</p>
+    </div>
+
+    <div class="form-group">
+        <label for="brochure-fold">Fold Type</label>
+
+        <select id="brochure-fold">
+            <option value="">Choose a fold</option>
+            <option value="bi-fold">Bi-fold</option>
+            <option value="tri-fold">Tri-fold</option>
+            <option value="z-fold">Z-fold</option>
+            <option value="gate-fold">Gate Fold</option>
+            <option value="none">No Fold</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="brochure-quantity">Quantity</label>
+
+        <input
+            type="number"
+            id="brochure-quantity"
+            min="1"
+            value="50"
+            placeholder="Enter quantity"
+        >
+
+        <p class="field-note">
+            Enter the number of brochures you need.
+        </p>
+    </div>
+
+    <div class="form-group">
+        <label>Printing Sides</label>
+
+        <div class="order-type-options">
+
+            <label class="order-type-option">
+                <input
+                    type="radio"
+                    name="brochure-sides"
+                    value="single"
+                    checked
+                >
+
+                <span>
+                    <strong>Front Only</strong>
+                    <small>Printing on one side.</small>
+                </span>
+            </label>
+
+            <label class="order-type-option">
+                <input
+                    type="radio"
+                    name="brochure-sides"
+                    value="double"
+                >
+
+                <span>
+                    <strong>Front & Back</strong>
+                    <small>Printing on both sides.</small>
+                </span>
+            </label>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Print Colour</label>
+
+        <div class="order-type-options">
+
+            <label class="order-type-option">
+                <input
+                    type="radio"
+                    name="brochure-colour"
+                    value="colour"
+                    checked
+                >
+
+                <span>
+                    <strong>Full Colour</strong>
+                    <small>Professional full-colour printing.</small>
+                </span>
+            </label>
+
+            <label class="order-type-option">
+                <input
+                    type="radio"
+                    name="brochure-colour"
+                    value="black-white"
+                >
+
+                <span>
+                    <strong>Black & White</strong>
+                    <small>Simple black-and-white printing.</small>
+                </span>
+            </label>
+
+        </div>
+    </div>
+
+</div>
+
+<div id="logo-branding-options" class="dynamic-order-options" hidden>
+
+    <div class="dynamic-options-header">
+        <span>LOGO & BRANDING DETAILS</span>
+        <p>Tell us what you need for your brand identity.</p>
+    </div>
+
+    <div class="form-group">
+        <label for="branding-service">Branding Service</label>
+
+        <select id="branding-service">
+            <option value="">Choose a service</option>
+            <option value="logo-design">Logo Design</option>
+            <option value="logo-redesign">Logo Redesign</option>
+            <option value="brand-identity">Complete Brand Identity</option>
+            <option value="business-branding">Business Branding</option>
+            <option value="social-branding">Social Media Branding</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="branding-style">Preferred Style</label>
+
+        <select id="branding-style">
+            <option value="">Choose a style</option>
+            <option value="modern">Modern & Minimal</option>
+            <option value="luxury">Luxury & Premium</option>
+            <option value="bold">Bold & Professional</option>
+            <option value="creative">Creative & Unique</option>
+            <option value="simple">Simple & Clean</option>
+            <option value="not-sure">Not Sure — Let the Designer Decide</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="branding-business">Business / Brand Name</label>
+
+        <input
+            type="text"
+            id="branding-business"
+            placeholder="Enter your business or brand name"
+        >
+    </div>
+
+    <div class="form-group">
+        <label for="branding-description">Brand Description</label>
+
+        <textarea
+            id="branding-description"
+            rows="5"
+            placeholder="Tell us about your business, your audience and the kind of look you want."
+        ></textarea>
+    </div>
+
+</div>
+
+<div id="sticker-label-options" class="dynamic-order-options" hidden>
+
+    <div class="dynamic-options-header">
+        <span>STICKERS & LABELS DETAILS</span>
+        <p>Tell us the sticker type, quantity and shape.</p>
+    </div>
+
+    <div class="form-group">
+        <label for="sticker-type">Sticker Type</label>
+
+        <select id="sticker-type">
+            <option value="">Choose a sticker type</option>
+            <option value="product-label">Product Label</option>
+            <option value="branding">Branding Sticker</option>
+            <option value="packaging">Packaging Sticker</option>
+            <option value="thank-you">Thank You Sticker</option>
+            <option value="custom">Custom Sticker</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="sticker-shape">Shape</label>
+
+        <select id="sticker-shape">
+            <option value="rectangle">Rectangle</option>
+            <option value="square">Square</option>
+            <option value="circle">Circle</option>
+            <option value="custom">Custom Shape</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="sticker-quantity">Quantity</label>
+
+        <input
+            type="number"
+            id="sticker-quantity"
+            min="1"
+            value="50"
+            placeholder="Enter quantity"
+        >
+
+        <p class="field-note">
+            Enter the number of stickers or labels you need.
+        </p>
+    </div>
+
+</div>
+
+<div id="social-media-options" class="dynamic-order-options" hidden>
+
+    <div class="dynamic-options-header">
+        <span>SOCIAL MEDIA GRAPHICS DETAILS</span>
+        <p>Tell us the platform, design type and quantity you need.</p>
+    </div>
+
+    <div class="form-group">
+        <label for="social-platform">Platform</label>
+
+        <select id="social-platform">
+            <option value="">Choose a platform</option>
+            <option value="instagram">Instagram</option>
+            <option value="facebook">Facebook</option>
+            <option value="whatsapp">WhatsApp</option>
+            <option value="tiktok">TikTok</option>
+            <option value="youtube">YouTube</option>
+            <option value="multiple">Multiple Platforms</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="social-design-type">Design Type</label>
+
+        <select id="social-design-type">
+            <option value="">Choose a design type</option>
+            <option value="post">Social Media Post</option>
+            <option value="story">Story / Status</option>
+            <option value="banner">Cover / Banner</option>
+            <option value="advert">Advert / Promotional Graphic</option>
+            <option value="event">Event Announcement</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="social-quantity">Quantity</label>
+
+        <input
+            type="number"
+            id="social-quantity"
+            min="1"
+            value="1"
+            placeholder="Enter quantity"
+        >
+
+        <p class="field-note">
+            Enter the number of graphics you need.
+        </p>
+    </div>
+
+</div>
+
+<div id="printing-options" class="dynamic-order-options" hidden>
+
+    <div class="dynamic-options-header">
+        <span>PRINTING DETAILS</span>
+        <p>Tell us the material, quantity and printing style.</p>
+    </div>
+
+    <div class="form-group">
+        <label for="printing-material">Print Material</label>
+
+        <select id="printing-material">
+            <option value="">Choose a material</option>
+            <option value="paper">Paper</option>
+            <option value="cardstock">Cardstock</option>
+            <option value="sticker-paper">Sticker Paper</option>
+            <option value="photo-paper">Photo Paper</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="printing-quantity">Quantity</label>
+
+        <input
+            type="number"
+            id="printing-quantity"
+            min="1"
+            value="1"
+            placeholder="Enter quantity"
+        >
+    </div>
+
+    <div class="form-group">
+        <label>Printing Sides</label>
+
+        <div class="order-type-options">
+
+            <label class="order-type-option">
+                <input
+                    type="radio"
+                    name="printing-sides"
+                    value="single"
+                    checked
+                >
+
+                <span>
+                    <strong>Front Only</strong>
+                    <small>Printing on one side.</small>
+                </span>
+            </label>
+
+            <label class="order-type-option">
+                <input
+                    type="radio"
+                    name="printing-sides"
+                    value="double"
+                >
+
+                <span>
+                    <strong>Front & Back</strong>
+                    <small>Printing on both sides.</small>
+                </span>
+            </label>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Print Colour</label>
+
+        <div class="order-type-options">
+
+            <label class="order-type-option">
+                <input
+                    type="radio"
+                    name="printing-colour"
+                    value="colour"
+                    checked
+                >
+
+                <span>
+                    <strong>Full Colour</strong>
+                    <small>Professional full-colour printing.</small>
+                </span>
+            </label>
+
+            <label class="order-type-option">
+                <input
+                    type="radio"
+                    name="printing-colour"
+                    value="black-white"
+                >
+
+                <span>
+                    <strong>Black & White</strong>
+                    <small>Simple black-and-white printing.</small>
+                </span>
+            </label>
+
+        </div>
+    </div>
+
+</div>
+
+<div id="invitation-options" class="dynamic-order-options" hidden>
+
+    <div class="dynamic-options-header">
+        <span>INVITATION CARD DETAILS</span>
+        <p>Tell us the occasion, quantity and finishing.</p>
+    </div>
+
+    <div class="form-group">
+        <label for="invitation-type">Invitation Type</label>
+
+        <select id="invitation-type">
+            <option value="">Choose an occasion</option>
+            <option value="wedding">Wedding</option>
+            <option value="birthday">Birthday</option>
+            <option value="anniversary">Anniversary</option>
+            <option value="graduation">Graduation</option>
+            <option value="naming">Naming Ceremony</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="invitation-quantity">Quantity</label>
+
+        <input
+            type="number"
+            id="invitation-quantity"
+            min="1"
+            value="50"
+            placeholder="Enter quantity"
+        >
+
+        <p class="field-note">
+            Enter the number of invitation cards you need.
+        </p>
+    </div>
+
+    <div class="form-group">
+        <label>Printing Sides</label>
+
+        <div class="order-type-options">
+
+            <label class="order-type-option">
+                <input
+                    type="radio"
+                    name="invitation-sides"
+                    value="single"
+                    checked
+                >
+
+                <span>
+                    <strong>Front Only</strong>
+                    <small>Printing on one side.</small>
+                </span>
+            </label>
+
+            <label class="order-type-option">
+                <input
+                    type="radio"
+                    name="invitation-sides"
+                    value="double"
+                >
+
+                <span>
+                    <strong>Front & Back</strong>
+                    <small>Printing on both sides.</small>
+                </span>
+            </label>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Print Colour</label>
+
+        <div class="order-type-options">
+
+            <label class="order-type-option">
+                <input
+                    type="radio"
+                    name="invitation-colour"
+                    value="colour"
+                    checked
+                >
+
+                <span>
+                    <strong>Full Colour</strong>
+                    <small>Professional full-colour printing.</small>
+                </span>
+            </label>
+
+            <label class="order-type-option">
+                <input
+                    type="radio"
+                    name="invitation-colour"
+                    value="black-white"
+                >
+
+                <span>
+                    <strong>Black & White</strong>
+                    <small>Simple black-and-white printing.</small>
+                </span>
+            </label>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="invitation-finishing">Finishing</label>
+
+        <select id="invitation-finishing">
+            <option value="standard">Standard</option>
+            <option value="glossy">Glossy</option>
+            <option value="matte">Matte</option>
+        </select>
+    </div>
+
+</div>
+
+<div id="id-card-options" class="dynamic-order-options" hidden>
+
+    <div class="dynamic-options-header">
+        <span>ID CARD DETAILS</span>
+        <p>Choose the card type, quantity and printing style.</p>
+    </div>
+
+    <div class="form-group">
+        <label for="id-card-type">Card Type</label>
+
+        <select id="id-card-type">
+            <option value="">Choose a card type</option>
+            <option value="pvc">PVC ID Card</option>
+            <option value="paper-laminated">Paper / Laminated ID Card</option>
+        </select>
+
+        <p class="field-note">
+            Choose the type of ID card you want us to produce.
+        </p>
+    </div>
+
+    <div class="form-group">
+        <label for="id-card-quantity">Quantity</label>
+
+        <input
+            type="number"
+            id="id-card-quantity"
+            min="1"
+            value="1"
+            placeholder="Enter quantity"
+        >
+
+        <p class="field-note">
+            Enter the number of ID cards you need.
+        </p>
+    </div>
+
+    <div class="form-group">
+        <label>Printing Sides</label>
+
+        <div class="order-type-options">
+
+            <label class="order-type-option">
+                <input
+                    type="radio"
+                    name="id-card-sides"
+                    value="single"
+                    checked
+                >
+
+                <span>
+                    <strong>Front Only</strong>
+                    <small>Printing on one side.</small>
+                </span>
+            </label>
+
+            <label class="order-type-option">
+                <input
+                    type="radio"
+                    name="id-card-sides"
+                    value="double"
+                >
+
+                <span>
+                    <strong>Front & Back</strong>
+                    <small>Printing on both sides.</small>
+                </span>
+            </label>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Print Colour</label>
+
+        <div class="order-type-options">
+
+            <label class="order-type-option">
+                <input
+                    type="radio"
+                    name="id-card-colour"
+                    value="colour"
+                    checked
+                >
+
+                <span>
+                    <strong>Full Colour</strong>
+                    <small>Professional full-colour printing.</small>
+                </span>
+            </label>
+
+            <label class="order-type-option">
+                <input
+                    type="radio"
+                    name="id-card-colour"
+                    value="black-white"
+                >
+
+                <span>
+                    <strong>Black & White</strong>
+                    <small>Simple black-and-white printing.</small>
+                </span>
+            </label>
+
+        </div>
+    </div>
+
+</div>
+
+<div id="business-card-options" class="dynamic-order-options" hidden>
+
+    <div class="dynamic-options-header">
+        <span>BUSINESS CARD DETAILS</span>
+        <p>Tell us the card type, quantity and finishing.</p>
+    </div>
+
+    <div class="form-group">
+        <label for="business-card-quantity">Quantity</label>
+
+        <input
+            type="number"
+            id="business-card-quantity"
+            min="1"
+            value="100"
+            placeholder="Enter quantity"
+        >
+
+        <p class="field-note">
+            Enter the number of cards you need.
+        </p>
+    </div>
+
+    <div class="form-group">
+        <label>Printing Sides</label>
+
+        <div class="order-type-options">
+
+            <label class="order-type-option">
+                <input
+                    type="radio"
+                    name="business-card-sides"
+                    value="single"
+                    checked
+                >
+
+                <span>
+                    <strong>Front Only</strong>
+                    <small>Printing on one side.</small>
+                </span>
+            </label>
+
+            <label class="order-type-option">
+                <input
+                    type="radio"
+                    name="business-card-sides"
+                    value="double"
+                >
+
+                <span>
+                    <strong>Front & Back</strong>
+                    <small>Printing on both sides.</small>
+                </span>
+            </label>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Print Colour</label>
+
+        <div class="order-type-options">
+
+            <label class="order-type-option">
+                <input
+                    type="radio"
+                    name="business-card-colour"
+                    value="colour"
+                    checked
+                >
+
+                <span>
+                    <strong>Full Colour</strong>
+                    <small>Professional full-colour printing.</small>
+                </span>
+            </label>
+
+            <label class="order-type-option">
+                <input
+                    type="radio"
+                    name="business-card-colour"
+                    value="black-white"
+                >
+
+                <span>
+                    <strong>Black & White</strong>
+                    <small>Simple black-and-white printing.</small>
+                </span>
+            </label>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="business-card-finishing">Finishing</label>
+
+        <select id="business-card-finishing">
+            <option value="standard">Standard</option>
+            <option value="glossy">Glossy</option>
+            <option value="matte">Matte</option>
+        </select>
+    </div>
+
+</div>
+
+<div id="flyer-options" class="dynamic-order-options" hidden>
+
+    <div class="dynamic-options-header">
+        <span>FLYER / HANDBILL DETAILS</span>
+        <p>Tell us the quantity and printing style you need.</p>
+    </div>
+
+    <div class="form-group">
+        <label for="flyer-quantity">Quantity</label>
+
+        <input
+            type="number"
+            id="flyer-quantity"
+            min="1"
+            value="100"
+            placeholder="Enter quantity"
+        >
+
+        <p class="field-note">
+            Enter the number of copies you need.
+        </p>
+    </div>
+
+    <div class="form-group">
+        <label>Printing Sides</label>
+
+        <div class="order-type-options">
+
+            <label class="order-type-option">
+                <input
+                    type="radio"
+                    name="flyer-sides"
+                    value="single"
+                    checked
+                >
+
+                <span>
+                    <strong>Front Only</strong>
+                    <small>Printing on one side.</small>
+                </span>
+            </label>
+
+            <label class="order-type-option">
+                <input
+                    type="radio"
+                    name="flyer-sides"
+                    value="double"
+                >
+
+                <span>
+                    <strong>Front & Back</strong>
+                    <small>Printing on both sides.</small>
+                </span>
+            </label>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Print Colour</label>
+
+        <div class="order-type-options">
+
+            <label class="order-type-option">
+                <input
+                    type="radio"
+                    name="flyer-colour"
+                    value="colour"
+                    checked
+                >
+
+                <span>
+                    <strong>Full Colour</strong>
+                    <small>Professional full-colour printing.</small>
+                </span>
+            </label>
+
+            <label class="order-type-option">
+                <input
+                    type="radio"
+                    name="flyer-colour"
+                    value="black-white"
+                >
+
+                <span>
+                    <strong>Black & White</strong>
+                    <small>Simple black-and-white printing.</small>
+                </span>
+            </label>
+
+        </div>
+    </div>
+
+</div>
+
+<div id="flex-options" class="dynamic-order-options" hidden>
+
+    <div class="dynamic-options-header">
+        <span>FLEX / BANNER DETAILS</span>
+        <p>Tell us the quantity you need. The designer will help with the appropriate specifications.</p>
+    </div>
+
+    <div class="form-group">
+        <label for="flex-quantity">Quantity</label>
+
+        <input
+            type="number"
+            id="flex-quantity"
+            min="1"
+            value="1"
+            placeholder="Enter quantity"
+        >
+
+        <p class="field-note">
+            How many copies do you need?
+        </p>
+    </div>
+
+</div>
+
+<div class="form-group">
+
+                    <label for="service">
+                        Service
+                    </label>
+
+                    <select id="service" name="service" required>
+
+                        <option value="">
+                            Select a service
+                        </option>
+
+                        <option value="graphic-design">
+                            Graphic Design
+                        </option>
+
+                        <option value="printing">
+                            Printing
+                        </option>
+
+                        <option value="flex-banner">
+                            Flex & Banners
+                        </option>
+
+                        <option value="flyer-handbill">
+                            Flyers & Handbills
+                        </option>
+
+                        <option value="business-card">
+                            Business Cards
+                        </option>
+
+                        <option value="id-card">
+                            ID Cards
+                        </option>
+
+                        <option value="invitation-card">
+                            Invitation Cards
+                        </option>
+
+                        <option value="social-media">
+                            Social Media Graphics
+                        </option>
+
+                        <option value="sticker-label">
+                            Stickers & Labels
+                        </option>
+
+                        <option value="logo-branding">
+                            Logo & Branding
+                        </option>
+
+                        <option value="brochure">
+                            Brochures
+                        </option>
+
+                        <option value="church-material">
+                            Church Materials
+                        </option>
+
+                        <option value="custom-request">
+                            I Don't Know What I Need
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Order type
+                    </label>
+
+                    <div class="order-type-options">
+
+                        <label class="order-type-option">
+
+                            <input
+                                type="radio"
+                                name="orderType"
+                                value="design"
+                                checked
+                            >
+
+                            <span>
+                                <strong>Design Only</strong>
+                                <small>
+                                    We create the design for you.
+                                </small>
+                            </span>
+
+                        </label>
+
+
+                        <label class="order-type-option">
+
+                            <input
+                                type="radio"
+                                name="orderType"
+                                value="design-print"
+                            >
+
+                            <span>
+                                <strong>Design + Printing</strong>
+                                <small>
+                                    Design and professionally print it.
+                                </small>
+                            </span>
+
+                        </label>
+
+
+                        <label class="order-type-option">
+
+                            <input
+                                type="radio"
+                                name="orderType"
+                                value="design-print-delivery"
+                            >
+
+                            <span>
+                                <strong>Design + Printing + Delivery</strong>
+                                <small>
+                                    We design, print and deliver it.
+                                </small>
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="description">
+                        What do you need?
+                    </label>
+
+                    <textarea
+                        id="description"
+                        name="description"
+                        rows="5"
+                        placeholder="Describe what you want us to design or print..."
+                    ></textarea>
+
+                    <p class="field-note">
+                        Not sure about the design or price?
+                        Don't worry — tell us what you need and we'll guide you.
+                    </p>
+
+                </div>
+
+
+
+<div class="form-group order-files-section">
+
+    <label for="order-files">Upload Files</label>
+
+    <div class="file-upload-box">
+
+        <input
+            type="file"
+            id="order-files"
+            name="files"
+            multiple
+            accept="image/*,.pdf,.doc,.docx"
+        >
+
+        <div class="file-upload-content">
+
+            <ion-icon name="cloud-upload-outline"></ion-icon>
+
+            <strong>Upload your files</strong>
+
+            <span>
+                Add logos, photos, documents, previous designs or references.
+            </span>
+
+            <small>
+                You can select multiple files.
+            </small>
+
+        </div>
+
+    </div>
+
+    <div id="selected-files" class="selected-files"></div>
+
+    <p class="field-note">
+        Don't have any files yet? That's okay. You can continue and discuss it with the designer.
+    </p>
+
+</div>
+
+
+<!-- ORDER REVIEW -->
+
+
+
+                <button
+                    type="submit"
+                    class="order-submit-btn"
+                >
+                    Continue
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <nav class="mobile-tab-bar">
+
+        <a href="dashboard.html" class="mobile-tab">
+            <ion-icon name="home-outline"></ion-icon>
+            <span>Home</span>
+        </a>
+
+        <a href="services.html" class="mobile-tab">
+            <ion-icon name="grid-outline"></ion-icon>
+            <span>Services</span>
+        </a>
+
+        <a href="orders.html" class="mobile-tab">
+            <ion-icon name="receipt-outline"></ion-icon>
+            <span>Orders</span>
+        </a>
+
+        <a href="account.html" class="mobile-tab">
+            <ion-icon name="person-outline"></ion-icon>
+            <span>Account</span>
+        </a>
+
+        <a href="more.html" class="mobile-tab">
+            <ion-icon name="menu-outline"></ion-icon>
+            <span>More</span>
+        </a>
+
+    </nav>
+
+
+    <script src="script.js"></script>
+    <script src="order.js"></script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard — Splendid Studio</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background: #080808;
+            color: #fff;
+        }
+
+        .admin-page {
+            padding: 100px 18px 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .admin-header {
+            margin-bottom: 25px;
+        }
+
+        .admin-eyebrow {
+            color: #d4af37;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .admin-header h1 {
+            margin: 6px 0;
+            font-size: 28px;
+        }
+
+        .admin-header p {
+            color: #888;
+            margin: 0;
+        }
+
+        .admin-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .admin-stat {
+            padding: 18px;
+            background: rgba(255,255,255,.035);
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 14px;
+            backdrop-filter: blur(14px);
+        }
+
+        .admin-stat span {
+            display: block;
+            color: #888;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+
+        .admin-stat strong {
+            font-size: 25px;
+        }
+
+        .admin-toolbar {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .admin-toolbar input,
+        .admin-toolbar select {
+            flex: 1;
+            min-width: 0;
+            padding: 13px 14px;
+            border-radius: 10px;
+            border: 1px solid #292929;
+            background: #111;
+            color: #fff;
+            outline: none;
+        }
+
+        .admin-orders {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .admin-order {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 17px;
+            background: rgba(255,255,255,.035);
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 14px;
+        }
+
+        .admin-order-main {
+            min-width: 0;
+        }
+
+        .admin-order-id {
+            color: #d4af37;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .admin-order-service {
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .admin-order-meta {
+            color: #888;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .admin-status {
+            padding: 7px 11px;
+            border-radius: 20px;
+            background: #19160b;
+            border: 1px solid #5a4815;
+            color: #d4af37;
+            font-size: 11px;
+            white-space: nowrap;
+        }
+
+        .admin-empty {
+            padding: 35px;
+            text-align: center;
+            color: #777;
+            border: 1px dashed #292929;
+            border-radius: 14px;
+        }
+
+        @media (max-width: 700px) {
+            .admin-page {
+                padding-left: 14px;
+                padding-right: 14px;
+            }
+
+            .admin-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .admin-toolbar {
+                flex-direction: column;
+            }
+
+            .admin-order {
+                align-items: flex-start;
+            }
+        }
+
+        .admin-manage-btn {
+            border: 1px solid rgba(212,175,55,.35);
+            background: rgba(212,175,55,.07);
+            color: #d4af37;
+            padding: 8px 12px;
+            border-radius: 9px;
+            font-size: 11px;
+            font-weight: 700;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .admin-manage-btn:hover {
+            background: rgba(212,175,55,.14);
+            border-color: rgba(212,175,55,.65);
+        }
+
+        .admin-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px;
+        }
+
+        .admin-modal-backdrop {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,.78);
+            backdrop-filter: blur(8px);
+        }
+
+        .admin-modal-panel {
+            position: relative;
+            z-index: 1;
+            width: min(620px, 100%);
+            max-height: 88vh;
+            overflow-y: auto;
+            padding: 24px;
+            box-sizing: border-box;
+            background: #101010;
+            border: 1px solid rgba(255,255,255,.1);
+            border-radius: 18px;
+            box-shadow: 0 25px 80px rgba(0,0,0,.55);
+        }
+
+        .admin-modal-close {
+            position: absolute;
+            top: 13px;
+            right: 15px;
+            width: 34px;
+            height: 34px;
+            border: 1px solid #292929;
+            border-radius: 50%;
+            background: #171717;
+            color: #aaa;
+            font-size: 22px;
+            line-height: 1;
+            cursor: pointer;
+        }
+
+        .admin-modal-eyebrow {
+            color: #d4af37;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.7px;
+            margin-bottom: 7px;
+        }
+
+        .admin-modal-panel h2 {
+            margin: 0 40px 22px 0;
+            font-size: 22px;
+        }
+
+        .admin-detail-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .admin-detail-grid > div {
+            padding: 12px;
+            background: #151515;
+            border: 1px solid #252525;
+            border-radius: 10px;
+        }
+
+        .admin-detail-grid span,
+        .admin-detail-grid strong {
+            display: block;
+        }
+
+        .admin-detail-grid span {
+            color: #777;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .admin-detail-grid strong {
+            color: #eee;
+            font-size: 13px;
+        }
+
+        .admin-detail-section {
+            margin-bottom: 20px;
+        }
+
+        .admin-detail-label {
+            display: block;
+            color: #777;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .admin-description {
+            padding: 13px;
+            background: #151515;
+            border: 1px solid #252525;
+            border-radius: 10px;
+            color: #d0d0d0;
+            font-size: 13px;
+            line-height: 1.6;
+            white-space: pre-wrap;
+        }
+
+        .admin-files {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .admin-file {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            padding: 10px 12px;
+            background: #151515;
+            border: 1px solid #252525;
+            border-radius: 9px;
+            color: #ccc;
+            font-size: 12px;
+        }
+
+        .admin-no-files {
+            padding: 12px;
+            background: #151515;
+            border: 1px solid #252525;
+            border-radius: 9px;
+            color: #777;
+            font-size: 12px;
+        }
+
+        .admin-status-control {
+            padding-top: 18px;
+            border-top: 1px solid #252525;
+        }
+
+        .admin-status-control label {
+            display: block;
+            color: #999;
+            font-size: 11px;
+            margin-bottom: 7px;
+        }
+
+        .admin-status-control select {
+            width: 100%;
+            padding: 12px;
+            box-sizing: border-box;
+            border: 1px solid #303030;
+            border-radius: 10px;
+            background: #151515;
+            color: #fff;
+            outline: none;
+        }
+
+        .admin-update-btn {
+            width: 100%;
+            margin-top: 10px;
+            padding: 12px;
+            border: 1px solid #d4af37;
+            border-radius: 10px;
+            background: #d4af37;
+            color: #080808;
+            font-size: 13px;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .admin-update-btn:disabled {
+            opacity: .55;
+            cursor: wait;
+        }
+
+        @media (max-width: 700px) {
+
+            .admin-order {
+                flex-wrap: wrap;
+            }
+
+            .admin-order-main {
+                width: 100%;
+            }
+
+            .admin-detail-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .admin-modal {
+                padding: 10px;
+            }
+
+            .admin-modal-panel {
+                padding: 20px;
+                border-radius: 16px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <main class="admin-page">
+
+        <header class="admin-header">
+            <div class="admin-eyebrow">Splendid Studio</div>
+
+            <h1>Admin Dashboard</h1>
+
+            <p>Manage customer orders and track their progress.</p>
+        </header>
+
+
+        <section class="admin-stats">
+
+            <div class="admin-stat">
+                <span>Total Orders</span>
+                <strong id="totalOrders">0</strong>
+            </div>
+
+            <div class="admin-stat">
+                <span>Pending</span>
+                <strong id="pendingOrders">0</strong>
+            </div>
+
+            <div class="admin-stat">
+                <span>In Progress</span>
+                <strong id="progressOrders">0</strong>
+            </div>
+
+            <div class="admin-stat">
+                <span>Completed</span>
+                <strong id="completedOrders">0</strong>
+            </div>
+
+        </section>
+
+
+        <section class="admin-toolbar">
+
+            <input
+                type="search"
+                id="orderSearch"
+                placeholder="Search orders..."
+            >
+
+            <select id="statusFilter">
+
+                <option value="all">
+                    All statuses
+                </option>
+
+                <option value="Pending">
+                    Pending
+                </option>
+
+                <option value="In Progress">
+                    In Progress
+                </option>
+
+                <option value="Ready">
+                    Ready
+                </option>
+
+                <option value="Completed">
+                    Completed
+                </option>
+
+            </select>
+
+        </section>
+
+
+        <section
+            id="adminOrders"
+            class="admin-orders"
+        >
+
+            <div class="admin-empty">
+                Loading orders...
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="admin.js"></script>
+
+</body>
+</html>

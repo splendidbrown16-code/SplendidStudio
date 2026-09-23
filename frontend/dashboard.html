@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="module" src="vendor/ionicons/ionicons.esm.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | Splendid Studio</title>
+    <meta name="description" content="Manage your Splendid Studio orders and account.">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-page">
+
+    <header class="dashboard-header">
+
+        <a href="../index.html" class="auth-logo">
+            <img src="assets/splendid-studio-logo.png" alt="Splendid Studio">
+        </a>
+
+        <div class="dashboard-user">
+            <span class="user-avatar">S</span>
+
+            <div class="user-info">
+                <strong>Welcome back</strong>
+                <span>Customer</span>
+            </div>
+        </div>
+
+    </header>
+
+
+    <main class="dashboard-container">
+
+        <section class="dashboard-welcome">
+
+            <div>
+                <span class="auth-badge">✦ CUSTOMER DASHBOARD</span>
+
+                <h1>Your creative space.</h1>
+
+                <p>
+                    Manage your orders, track your projects and start
+                    something new with Splendid Studio.
+                </p>
+            </div>
+
+            <a href="order.html" class="dashboard-primary-btn">
+                Start an Order
+                <span>→</span>
+            </a>
+
+        </section>
+
+
+        <section class="dashboard-stats">
+
+            <div class="dashboard-stat">
+                <span class="stat-icon">✦</span>
+
+                <div>
+                    <strong>0</strong>
+                    <span>Total Orders</span>
+                </div>
+            </div>
+
+            <div class="dashboard-stat">
+                <span class="stat-icon">◷</span>
+
+                <div>
+                    <strong>0</strong>
+                    <span>Active Orders</span>
+                </div>
+            </div>
+
+            <div class="dashboard-stat">
+                <span class="stat-icon">✓</span>
+
+                <div>
+                    <strong>0</strong>
+                    <span>Completed</span>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="auth-badge">YOUR ORDERS</span>
+                    <h2>Recent orders</h2>
+                </div>
+
+                <a href="#" class="view-all">View all →</a>
+
+            </div>
+
+
+            <div class="empty-orders">
+
+                <div class="empty-icon">✦</div>
+
+                <h3>No orders yet</h3>
+
+                <p>
+                    Your orders will appear here once you place your
+                    first order with Splendid Studio.
+                </p>
+
+                <a href="order.html" class="empty-action">
+                    Create your first order →
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="auth-badge">QUICK ACCESS</span>
+                    <h2>What would you like to do?</h2>
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-actions">
+
+                <a href="order.html" class="dashboard-action">
+                    <span class="action-icon">✦</span>
+
+                    <div>
+                        <strong>Start a new order</strong>
+                        <p>Choose a service and tell us what you need.</p>
+                    </div>
+
+                    <span class="action-arrow">→</span>
+                </a>
+
+
+                <a href="#" class="dashboard-action">
+                    <span class="action-icon">◷</span>
+
+                    <div>
+                        <strong>Track an order</strong>
+                        <p>Check the progress of your current projects.</p>
+                    </div>
+
+                    <span class="action-arrow">→</span>
+                </a>
+
+
+                <a href="#" class="dashboard-action">
+                    <span class="action-icon">◉</span>
+
+                    <div>
+                        <strong>My profile</strong>
+                        <p>Manage your contact information and account.</p>
+                    </div>
+
+                    <span class="action-arrow">→</span>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="dashboard-footer">
+        <span>© 2026 Splendid Studio</span>
+        <span>Design • Print • Deliver</span>
+    </footer>
+
+
+    <!-- Customer Tab Navigation -->
+    <nav class="mobile-tab-bar" aria-label="Customer navigation">
+
+        <a href="dashboard.html" class="mobile-tab active">
+            <ion-icon name="home-outline"></ion-icon>
+            <span>Home</span>
+        </a>
+
+        <a href="services.html" class="mobile-tab">
+            <ion-icon name="grid-outline"></ion-icon>
+            <span>Services</span>
+        </a>
+
+        <a href="orders.html" class="mobile-tab">
+            <ion-icon name="receipt-outline"></ion-icon>
+            <span>Orders</span>
+        </a>
+
+        <a href="account.html" class="mobile-tab" id="accountTab">
+            <span class="account-tab-icon">
+                <ion-icon name="person-outline"></ion-icon>
+                <span class="account-notification-badge" id="accountNotificationBadge"></span>
+            </span>
+            <span>Account</span>
+        </a>
+
+        <a href="more.html" class="mobile-tab">
+            <ion-icon name="ellipsis-horizontal"></ion-icon>
+            <span>More</span>
+        </a>
+
+    </nav>
+
+</body>
+</html>
+
+<script src="dashboard-notifications.js"></script>

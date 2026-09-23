@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Review Order — Splendid Studio</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css?v=2"
+    >
+
+    <script
+        type="module"
+        src="vendor/ionicons/ionicons.esm.js"
+    ></script>
+
+</head>
+
+<body>
+
+    <main class="review-page">
+
+        <!-- NORMAL REVIEW STATE -->
+
+        <div id="review-state">
+
+            <header class="review-page-header">
+
+                <a
+                    href="order.html"
+                    class="review-back-btn"
+                >
+                    <ion-icon name="arrow-back-outline"></ion-icon>
+                    <span>Edit Order</span>
+                </a>
+
+            </header>
+
+
+            <section class="review-hero">
+
+                <span class="eyebrow">
+                    ORDER CONFIRMATION
+                </span>
+
+                <h1>
+                    Review Your Order
+                </h1>
+
+                <p>
+                    Take a quick look at what you entered before
+                    sending your order to Splendid Studio.
+                </p>
+
+            </section>
+
+
+            <section class="review-content">
+
+
+                <!-- SERVICE -->
+
+                <div class="review-block">
+
+                    <div class="review-block-header">
+
+                        <div>
+
+                            <span class="review-label">
+                                SERVICE
+                            </span>
+
+                            <h2 id="review-service">
+                                Not selected
+                            </h2>
+
+                        </div>
+
+                        <ion-icon
+                            name="briefcase-outline"
+                        ></ion-icon>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ORDER TYPE -->
+
+                <div class="review-block">
+
+                    <div class="review-row">
+
+                        <span>
+                            Order Type
+                        </span>
+
+                        <strong id="review-order-type">
+                            Not selected
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DESCRIPTION -->
+
+                <div class="review-block">
+
+                    <div class="review-block-title">
+
+                        <span class="review-label">
+                            YOUR REQUEST
+                        </span>
+
+                    </div>
+
+                    <p
+                        id="review-description"
+                        class="review-description"
+                    >
+                        Not provided
+                    </p>
+
+                </div>
+
+
+                <!-- ATTACHMENTS -->
+
+                <div class="review-block">
+
+                    <div class="review-block-title">
+
+                        <span class="review-label">
+                            ATTACHMENTS
+                        </span>
+
+                    </div>
+
+                    <div
+                        id="review-files"
+                        class="review-files"
+                    >
+
+                        <p>
+                            No files attached.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- NOTICE -->
+
+                <div class="review-confirmation-note">
+
+                    <ion-icon
+                        name="chatbubble-ellipses-outline"
+                    ></ion-icon>
+
+                    <div>
+
+                        <strong>
+                            Ready to send?
+                        </strong>
+
+                        <p>
+                            Once you submit this order, we'll review
+                            your request and you can continue the
+                            discussion with the designer on WhatsApp.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ACTIONS -->
+
+                <div class="review-actions">
+
+                    <a
+                        href="order.html"
+                        class="review-edit-btn"
+                    >
+                        <ion-icon
+                            name="create-outline"
+                        ></ion-icon>
+
+                        Edit Order
+
+                    </a>
+
+
+                    <button
+                        type="button"
+                        id="submit-order-btn"
+                        class="review-submit-btn"
+                    >
+
+                        Submit Order
+
+                        <ion-icon
+                            name="arrow-forward-outline"
+                        ></ion-icon>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- SUBMITTED STATE -->
+
+        <section
+            id="submitted-state"
+            class="submitted-state"
+            aria-hidden="true"
+        >
+
+            <div class="submitted-icon">
+
+                <ion-icon
+                    name="checkmark-outline"
+                ></ion-icon>
+
+            </div>
+
+
+            <span class="submitted-eyebrow">
+                ORDER RECEIVED
+            </span>
+
+
+            <h1>
+                Your order is on its way.
+            </h1>
+
+
+            <p>
+                We've received your request. Continue with the
+                designer on WhatsApp to discuss the details.
+            </p>
+
+
+            <button
+                type="button"
+                id="talk-designer-btn"
+                class="talk-designer-btn"
+            >
+
+                <span class="talk-button-glow"></span>
+
+                <span class="talk-button-content">
+
+                    <ion-icon
+                        name="logo-whatsapp"
+                    ></ion-icon>
+
+                    <span>
+                        Talk to the Designer
+                    </span>
+
+                    <ion-icon
+                        name="arrow-forward-outline"
+                        class="talk-arrow"
+                    ></ion-icon>
+
+                </span>
+
+            </button>
+
+
+            <span class="submitted-hint">
+                Tap to continue the conversation
+            </span>
+
+        </section>
+
+    </main>
+
+
+    <!-- CUSTOMER TABS -->
+
+    <nav class="mobile-tab-bar">
+
+        <a
+            href="dashboard.html"
+            class="mobile-tab"
+        >
+
+            <ion-icon
+                name="home-outline"
+            ></ion-icon>
+
+            <span>
+                Home
+            </span>
+
+        </a>
+
+
+        <a
+            href="services.html"
+            class="mobile-tab"
+        >
+
+            <ion-icon
+                name="grid-outline"
+            ></ion-icon>
+
+            <span>
+                Services
+            </span>
+
+        </a>
+
+
+        <a
+            href="orders.html"
+            class="mobile-tab active"
+        >
+
+            <ion-icon
+                name="receipt-outline"
+            ></ion-icon>
+
+            <span>
+                Orders
+            </span>
+
+        </a>
+
+
+        <a
+            href="account.html"
+            class="mobile-tab"
+        >
+
+            <ion-icon
+                name="person-outline"
+            ></ion-icon>
+
+            <span>
+                Account
+            </span>
+
+        </a>
+
+
+        <a
+            href="more.html"
+            class="mobile-tab"
+        >
+
+            <ion-icon
+                name="menu-outline"
+            ></ion-icon>
+
+            <span>
+                More
+            </span>
+
+        </a>
+
+    </nav>
+
+
+    <script src="script.js"></script>
+
+    <script src="review-order.js"></script>
+
+</body>
+
+</html>

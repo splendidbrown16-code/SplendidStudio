@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script type="module" src="vendor/ionicons/ionicons.esm.js"></script>
+
+    <title>Order Details — Splendid Studio</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="order-details-page">
+
+        <section class="order-details-hero">
+
+            <a href="orders.html" class="back-to-orders">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+                Back to Orders
+            </a>
+
+            <div class="order-heading-row">
+
+                <div>
+
+                    <span class="section-label">
+                        ORDER DETAILS
+                    </span>
+
+                    <h1 id="detail-order-id">
+                        Loading...
+                    </h1>
+
+                    <p id="detail-service">
+                        Loading order...
+                    </p>
+
+                </div>
+
+                <span
+                    id="detail-status"
+                    class="order-status pending"
+                >
+                    Pending
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <section class="order-details-content">
+
+            <!-- Order Summary -->
+            <div class="order-summary">
+
+                <div class="detail-item">
+                    <span>Service</span>
+                    <strong id="detail-order-type">
+                        —
+                    </strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Description</span>
+                    <strong id="detail-description">
+                        —
+                    </strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Order Date</span>
+                    <strong id="detail-order-date">
+                        —
+                    </strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Total</span>
+                    <strong
+                        id="detail-price"
+                        class="order-total"
+                    >
+                        Price pending
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <!-- Order Progress -->
+            <section class="order-progress">
+
+                <div class="details-section-heading">
+
+                    <span class="section-label">
+                        PROGRESS
+                    </span>
+
+                    <h2>
+                        Order Status
+                    </h2>
+
+                </div>
+
+
+                <div class="progress-list">
+
+                    <div
+                        class="progress-step"
+                        data-progress="received"
+                    >
+
+                        <div class="progress-icon">
+                            <ion-icon name="checkmark-outline"></ion-icon>
+                        </div>
+
+                        <div>
+                            <strong>Order Received</strong>
+
+                            <span>
+                                Your order has been received.
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="progress-step"
+                        data-progress="designing"
+                    >
+
+                        <div class="progress-icon">
+                            <ion-icon name="color-palette-outline"></ion-icon>
+                        </div>
+
+                        <div>
+                            <strong>Designing</strong>
+
+                            <span>
+                                Your design is currently being worked on.
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="progress-step"
+                        data-progress="printing"
+                    >
+
+                        <div class="progress-icon">
+                            <ion-icon name="print-outline"></ion-icon>
+                        </div>
+
+                        <div>
+                            <strong>Printing</strong>
+
+                            <span>
+                                Printing will begin after the design is approved.
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="progress-step"
+                        data-progress="ready"
+                    >
+
+                        <div class="progress-icon">
+                            <ion-icon name="cube-outline"></ion-icon>
+                        </div>
+
+                        <div>
+                            <strong>Ready</strong>
+
+                            <span>
+                                Your order will be ready for pickup or delivery.
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="progress-step"
+                        data-progress="completed"
+                    >
+
+                        <div class="progress-icon">
+                            <ion-icon name="checkmark-done-outline"></ion-icon>
+                        </div>
+
+                        <div>
+                            <strong>Completed</strong>
+
+                            <span>
+                                Order successfully completed.
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Attachments -->
+            <section
+                id="detail-files-section"
+                class="order-progress"
+            >
+
+                <div class="details-section-heading">
+
+                    <span class="section-label">
+                        ATTACHMENTS
+                    </span>
+
+                    <h2>
+                        Submitted Files
+                    </h2>
+
+                </div>
+
+                <div id="detail-files">
+                    Loading attachments...
+                </div>
+
+            </section>
+
+
+            <!-- Contact -->
+            <div class="order-contact">
+
+                <div>
+
+                    <strong>
+                        Need help with this order?
+                    </strong>
+
+                    <span>
+                        Talk directly with the designer.
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://wa.me/2349164568234"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    <ion-icon name="logo-whatsapp"></ion-icon>
+                    Contact
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Customer Tab Navigation -->
+    <nav
+        class="mobile-tab-bar"
+        aria-label="Customer navigation"
+    >
+
+        <a
+            href="dashboard.html"
+            class="mobile-tab"
+        >
+            <ion-icon name="home-outline"></ion-icon>
+            <span>Home</span>
+        </a>
+
+        <a
+            href="services.html"
+            class="mobile-tab"
+        >
+            <ion-icon name="grid-outline"></ion-icon>
+            <span>Services</span>
+        </a>
+
+        <a
+            href="orders.html"
+            class="mobile-tab active"
+        >
+            <ion-icon name="receipt-outline"></ion-icon>
+            <span>Orders</span>
+        </a>
+
+        <a
+            href="account.html"
+            class="mobile-tab"
+        >
+            <ion-icon name="person-outline"></ion-icon>
+            <span>Account</span>
+        </a>
+
+        <a
+            href="more.html"
+            class="mobile-tab"
+        >
+            <ion-icon name="ellipsis-horizontal"></ion-icon>
+            <span>More</span>
+        </a>
+
+    </nav>
+
+
+    <script src="script.js"></script>
+    <script src="order-details.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script type="module" src="vendor/ionicons/ionicons.esm.js"></script>
+
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Account | Splendid Studio</title>
+
+    <meta
+        name="description"
+        content="Manage your Splendid Studio account."
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        .account-page {
+            min-height: 100vh;
+            padding-bottom: 100px;
+        }
+
+        .account-container {
+            width: min(760px, calc(100% - 28px));
+            margin: 0 auto;
+            padding: 95px 0 35px;
+        }
+
+        .account-heading {
+            margin-bottom: 25px;
+        }
+
+        .account-heading .auth-badge {
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .account-heading h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .account-heading p {
+            margin: 7px 0 0;
+            color: #888;
+            font-size: 14px;
+        }
+
+        .account-profile {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 18px;
+            margin-bottom: 18px;
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 16px;
+            background: rgba(255,255,255,.035);
+            backdrop-filter: blur(14px);
+        }
+
+        .account-avatar {
+            width: 48px;
+            height: 48px;
+            flex: 0 0 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #d4af37;
+            color: #080808;
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .account-profile strong {
+            display: block;
+            font-size: 15px;
+        }
+
+        .account-profile span {
+            display: block;
+            margin-top: 4px;
+            color: #888;
+            font-size: 12px;
+        }
+
+        .account-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+
+        .account-item {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            width: 100%;
+            padding: 15px;
+            box-sizing: border-box;
+            border: 1px solid rgba(255,255,255,.07);
+            border-radius: 13px;
+            background: rgba(255,255,255,.025);
+            color: #fff;
+            text-decoration: none;
+            transition:
+                border-color .2s ease,
+                background .2s ease,
+                transform .2s ease;
+        }
+
+        .account-item:hover {
+            border-color: rgba(212,175,55,.45);
+            background: rgba(212,175,55,.055);
+            transform: translateY(-1px);
+        }
+
+        .account-item ion-icon {
+            width: 21px;
+            height: 21px;
+            color: #d4af37;
+            flex: 0 0 21px;
+        }
+
+        .account-item-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .account-item-content strong {
+            display: block;
+            font-size: 14px;
+        }
+
+        .account-item-content span {
+            display: block;
+            margin-top: 3px;
+            color: #777;
+            font-size: 12px;
+        }
+
+        .account-arrow {
+            color: #777;
+            font-size: 18px;
+        }
+
+        .admin-item {
+            border-color: rgba(212,175,55,.28);
+            background: rgba(212,175,55,.045);
+        }
+
+        .admin-item .account-item-content strong {
+            color: #d4af37;
+        }
+
+        .logout-item {
+            margin-top: 8px;
+            color: #ff8b8b;
+        }
+
+        .logout-item ion-icon {
+            color: #ff8b8b;
+        }
+
+    </style>
+</head>
+
+
+<body class="account-page">
+
+    <header class="dashboard-header">
+
+        <a href="dashboard.html" class="auth-logo">
+            <img
+                src="assets/splendid-studio-logo.png"
+                alt="Splendid Studio"
+            >
+        </a>
+
+        <div class="dashboard-user">
+
+            <span
+                class="user-avatar"
+                id="headerAvatar"
+            >
+                S
+            </span>
+
+            <div class="user-info">
+
+                <strong id="headerName">
+                    Account
+                </strong>
+
+                <span id="headerRole">
+                    Customer
+                </span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main class="account-container">
+
+        <section class="account-heading">
+
+            <span class="auth-badge">
+                ✦ MY ACCOUNT
+            </span>
+
+            <h1>Account</h1>
+
+            <p>
+                Manage your Splendid Studio account and orders.
+            </p>
+
+        </section>
+
+
+        <section class="account-profile">
+
+            <div
+                class="account-avatar"
+                id="accountAvatar"
+            >
+                S
+            </div>
+
+            <div>
+
+                <strong id="accountName">
+                    Loading...
+                </strong>
+
+                <span id="accountEmail">
+                    Loading...
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <section
+            class="account-menu"
+            id="accountMenu"
+        >
+
+            <a
+                href="orders.html"
+                class="account-item"
+            >
+
+                <ion-icon name="receipt-outline"></ion-icon>
+
+                <div class="account-item-content">
+
+                    <strong>My Orders</strong>
+
+                    <span>
+                        View and track your orders
+                    </span>
+
+                </div>
+
+                <span class="account-arrow">›</span>
+
+            </a>
+
+
+            <a
+                href="order.html"
+                class="account-item"
+            >
+
+                <ion-icon name="add-circle-outline"></ion-icon>
+
+                <div class="account-item-content">
+
+                    <strong>Start an Order</strong>
+
+                    <span>
+                        Create a new design or print request
+                    </span>
+
+                </div>
+
+                <span class="account-arrow">›</span>
+
+            </a>
+
+
+            <div id="adminSection"></div>
+
+
+            <a
+                href="more.html"
+                class="account-item logout-item"
+                id="logoutButton"
+            >
+
+                <ion-icon name="log-out-outline"></ion-icon>
+
+                <div class="account-item-content">
+
+                    <strong>Log Out</strong>
+
+                    <span>
+                        Sign out of your account
+                    </span>
+
+                </div>
+
+                <span class="account-arrow">›</span>
+
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <nav
+        class="mobile-tab-bar"
+        aria-label="Customer navigation"
+    >
+
+        <a
+            href="dashboard.html"
+            class="mobile-tab"
+        >
+            <ion-icon name="home-outline"></ion-icon>
+            <span>Home</span>
+        </a>
+
+        <a
+            href="services.html"
+            class="mobile-tab"
+        >
+            <ion-icon name="grid-outline"></ion-icon>
+            <span>Services</span>
+        </a>
+
+        <a
+            href="orders.html"
+            class="mobile-tab"
+        >
+            <ion-icon name="receipt-outline"></ion-icon>
+            <span>Orders</span>
+        </a>
+
+        <a
+            href="account.html"
+            class="mobile-tab active"
+        >
+            <ion-icon name="person-outline"></ion-icon>
+            <span>Account</span>
+        </a>
+
+        <a
+            href="more.html"
+            class="mobile-tab"
+        >
+            <ion-icon name="ellipsis-horizontal"></ion-icon>
+            <span>More</span>
+        </a>
+
+    </nav>
+
+
+    <script src="account.js"></script>
+
+</body>
+
+</html>

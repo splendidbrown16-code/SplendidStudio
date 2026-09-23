@@ -1,0 +1,13 @@
+.env
+backend/.env
+node_modules/
+backend/node_modules/
+
+# Customer uploads
+backend/uploads/
+
+# Backup files
+*.backup.js
+
+# Test files
+backend/attachment-test.txt
