@@ -64,11 +64,7 @@ loginForm.addEventListener("submit", async (event) => {
 
         showToast("Login successful!", "Welcome back to Splendid Studio.");
 
-        if (data.user.role === "admin") {
-    window.location.href = "admin.html";
-} else {
-    window.location.href = "dashboard.html";
-}
+        window.location.href = "dashboard.html";
 
     } catch (error) {
         console.error("Login error:", error);

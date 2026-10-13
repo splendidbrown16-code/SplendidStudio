@@ -232,8 +232,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
         try {
 
+            const token =
+                localStorage.getItem("splendidToken");
+
+            if (!token) {
+                window.location.href = "login.html";
+                return;
+            }
+
             const response =
-                await fetch("/api/orders");
+                await fetch("/api/orders", {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
 
             const data =
                 await response.json();

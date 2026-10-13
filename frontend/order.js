@@ -713,6 +713,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function uploadFile(file) {
 
+        const token =
+            localStorage.getItem("splendidToken");
+
+        if (!token) {
+            window.location.href = "login.html";
+            throw new Error("Please log in before uploading files.");
+        }
+
         const formData =
             new FormData();
 
@@ -727,6 +735,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 "/api/orders/upload",
                 {
                     method: "POST",
+                    headers: {
+                        "Authorization": `Bearer ${token}`
+                    },
                     body: formData
                 }
             );

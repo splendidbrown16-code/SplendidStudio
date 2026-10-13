@@ -250,6 +250,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
             try {
 
+                const token =
+                    localStorage.getItem("splendidToken");
+
+                if (!token) {
+                    window.location.href = "login.html";
+                    return;
+                }
+
                 const response =
                     await fetch(
                         "/api/orders",
@@ -258,7 +266,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
                             headers: {
                                 "Content-Type":
-                                    "application/json"
+                                    "application/json",
+
+                                "Authorization":
+                                    `Bearer ${token}`
                             },
 
                             body:
