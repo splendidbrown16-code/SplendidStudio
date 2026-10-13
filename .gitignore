@@ -11,3 +11,6 @@ backend/uploads/
 
 # Test files
 backend/attachment-test.txt
+
+# Backup files
+*.bak
